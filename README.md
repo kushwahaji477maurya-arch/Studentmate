@@ -1,0 +1,2 @@
+# Studentmate
+Student study planner 
