@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+  <header>
+    <h1>📚 StudyMate</h1>
+    <p>Your Student Study Planner</p>
+  </header>
+
+  <main>
+
+    <section class="stats">
+      <div>
+        <strong id="total">0</strong>
+        <span>Total</span>
+      </div>
+
+      <div>
+        <strong id="pending">0</strong>
+        <span>Pending</span>
+      </div>
+
+      <div>
+        <strong id="completed">0</strong>
+        <span>Completed</span>
+      </div>
+    </section>
+
+    <section class="form">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="Enter study task"
+      >
+
+      <select id="subjectInput">
+        <option value="">Select subject</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Mathematics</option>
+        <option>English</option>
+        <option>Computer</option>
+        <option>Other</option>
+      </select>
+
+      <input id="dateInput" type="date">
+
+      <button onclick="addTask()">➕ Add Task</button>
+    </section>
+
+    <section>
+      <h2>📋 My Tasks</h2>
+      <div id="taskList"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
