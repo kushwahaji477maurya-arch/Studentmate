@@ -3,64 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyMate</title>
+  <title>StudyHub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <h1>📚 StudyMate</h1>
-    <p>Your Student Study Planner</p>
+  <header class="hero">
+    <div>
+      <h1>📚 StudyHub</h1>
+      <p>Learn • Practice • Connect</p>
+    </div>
+    <button id="themeBtn">🌙</button>
   </header>
+
+  <nav class="nav">
+    <button data-section="dashboard">🏠 Dashboard</button>
+    <button data-section="quiz">🧠 Quiz</button>
+    <button data-section="exam">📝 Exam</button>
+    <button data-section="classes">🎥 Classes</button>
+    <button data-section="groups">👥 Groups</button>
+    <button data-section="contacts">📞 Contacts</button>
+  </nav>
 
   <main>
 
-    <section class="stats">
-      <div>
-        <strong id="total">0</strong>
-        <span>Total</span>
+    <section id="dashboard" class="section active">
+      <div class="card welcome">
+        <h2>Welcome to StudyHub 👋</h2>
+        <p>A simple student platform for quizzes, exam practice, online classes and study groups.</p>
       </div>
 
-      <div>
-        <strong id="pending">0</strong>
-        <span>Pending</span>
+      <div class="grid">
+        <div class="card stat">
+          <b id="quizScore">0</b>
+          <span>Quiz Points</span>
+        </div>
+
+        <div class="card stat">
+          <b id="examScore">0</b>
+          <span>Exam Points</span>
+        </div>
+
+        <div class="card stat">
+          <b id="groupsCount">0</b>
+          <span>My Groups</span>
+        </div>
       </div>
 
-      <div>
-        <strong id="completed">0</strong>
-        <span>Completed</span>
+      <div class="card">
+        <h3>Quick Start</h3>
+        <p>Try a quiz first, then explore exam practice and study groups.</p>
+        <button class="primary" data-go="quiz">Start Quiz →</button>
       </div>
     </section>
 
-    <section class="form">
-      <input
-        id="taskInput"
-        type="text"
-        placeholder="Enter study task"
-      >
 
-      <select id="subjectInput">
-        <option value="">Select subject</option>
-        <option>Physics</option>
-        <option>Chemistry</option>
-        <option>Mathematics</option>
-        <option>English</option>
-        <option>Computer</option>
-        <option>Other</option>
-      </select>
+    <section id="quiz" class="section">
+      <div class="card">
+        <h2>🧠 Study Quiz</h2>
 
-      <input id="dateInput" type="date">
+        <p id="quizQuestion"></p>
 
-      <button onclick="addTask()">➕ Add Task</button>
+        <div id="quizOptions"></div>
+
+        <p id="quizResult"></p>
+
+        <button class="primary" id="nextQuiz">
+          Next Question
+        </button>
+      </div>
     </section>
 
-    <section>
-      <h2>📋 My Tasks</h2>
-      <div id="taskList"></div>
+
+    <section id="exam" class="section">
+      <div class="card">
+
+        <h2>📝 Practice Exam</h2>
+
+        <p>Test yourself with a short sample exam.</p>
+
+        <div class="timer">
+          ⏱️ <span id="timer">60</span>s
+        </div>
+
+        <div id="examArea"></div>
+
+        <button class="primary" id="startExam">
+          Start Exam
+        </button>
+
+        <p id="examResult"></p>
+
+      </div>
+    </section>
+
+
+    <section id="classes" class="section">
+      <div class="card">
+
+        <h2>🎥 Video Classes</h2>
+
+        <p>
+          Add your teacher's meeting link below.
+        </p>
+
+        <input
+          id="meetingLink"
+          placeholder="Paste meeting link (https://...)"
+        >
+
+        <button class="primary" id="joinMeeting">
+          Join Video Class
+        </button>
+
+        <small>
+          Paste an approved online-class meeting link here.
+        </small>
+
+      </div>
+    </section>
+
+
+    <section id="groups" class="section">
+
+      <div class="card">
+
+        <h2>👥 Study Groups</h2>
+
+        <input
+          id="groupName"
+          placeholder="Enter group name"
+        >
+
+        <button class="primary" id="addGroup">
+          Create Group
+        </button>
+
+      </div>
+
+      <div id="groupList"></div>
+
+    </section>
+
+
+    <section id="contacts" class="section">
+
+      <div class="card">
+
+        <h2>📞 Study Contacts</h2>
+
+        <input
+          id="contactName"
+          placeholder="Name"
+        >
+
+        <input
+          id="contactInfo"
+          placeholder="Email or phone"
+        >
+
+        <button class="primary" id="addContact">
+          Add Contact
+        </button>
+
+      </div>
+
+      <div id="contactList"></div>
+
     </section>
 
   </main>
+
+
+  <footer>
+    StudyHub • Student Learning Project
+  </footer>
+
 
   <script src="script.js"></script>
 
